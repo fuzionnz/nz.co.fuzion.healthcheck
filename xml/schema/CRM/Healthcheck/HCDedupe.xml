@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="iso-8859-1" ?>
+
+<table>
+  <base>CRM/Healthcheck</base>
+  <class>HCDedupe</class>
+  <name>civicrm_healthcheck_dedupe</name>
+  <comment>FIXME</comment>
+  <log>true</log>
+
+  <field>
+    <name>id</name>
+    <type>int unsigned</type>
+    <required>true</required>
+    <comment>Unique HCDedupe ID</comment>
+  </field>
+  <primaryKey>
+    <name>id</name>
+    <autoincrement>true</autoincrement>
+  </primaryKey>
+
+  <field>
+    <name>rule_id</name>
+    <type>int unsigned</type>
+    <comment>FK to Contact</comment>
+  </field>
+  <foreignKey>
+    <name>id</name>
+    <table>civicrm_dedupe_rule_group</table>
+    <key>id</key>
+    <onDelete>CASCADE</onDelete>
+  </foreignKey>
+  <field>
+    <name>action_log_date</name>
+    <title>Log Date</title>
+    <type>datetime</type>
+    <comment></comment>
+  </field>
+  <field>
+    <name>value</name>
+    <type>text</type>
+    <comment>data associated with this group / name combo</comment>
+    <serialize>PHP</serialize>
+  </field>
+</table>

@@ -1,0 +1,1 @@
+select rule_id, value from civicrm_healthcheck_dedupe additional_where
